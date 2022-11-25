@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <style>
+            body{background-color: black;background-image: url('google-bg.jpg');background-size:cover;background-repeat: no-repeat; background-position: center;}
+            .box{position: absolute; width: 650px;height: auto;padding-bottom: 20px;display: flex;flex-direction: column;gap: 20px;top:50%;left: 50%; transform: translate(-50%,-50%); }
+            .head{text-align: center;text-transform: capitalize;font-weight: 1000; font-size:50px;color: antiquewhite; }
+            .in{height: 40px;background-color: rgb(255, 255, 255); width: 550px;border-radius: 20px;border: none;}
+            div{text-align: center;margin: auto;}
+            .inpu{height: 100%;width: 90%;border: none;outline: none; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: large;}
+            .component{width: 600px;height: auto;display: flex;padding: 10px 10px;flex-wrap: wrap;justify-content: center;}
+            .cir{background-color:white ;height: 1.3cm;width: 1.3cm; border-radius: 50%;}
+            #smll{height: 100px;width: 100px;margin: 10px 10px;border-radius: 8px;display: flex;flex-direction: column;color: aliceblue;}
+            #smll:hover{background-color: rgba(255, 255, 255,0.2);}
+        </style>
+    </head>
+    <body>
+        <div>
+            <div class="box">
+                <div class="head">
+                    google
+                </div>
+                <div class="in">
+                    <input type="text" class="inpu" placeholder="Search Google or type a URL">
+                    
+                </div>
+                <div class="component">
+                    <a id="smll"><div class="cir"><img src="chrome://favicon2/?size=24&scaleFactor=1x&showFallbackMonogram=&pageUrl=https%3A%2F%2Fyoutube.com%2F" alt=""></div> Youtube</a>
+                    <div id="smll"><div class="cir"></div>Whatsapp</div>
+                    <div id="smll" onclick="add()"><div class="cir"></div> Add Shortcut</div>
+                    <!-- <div id="smll"></div>
+                    <div id="smll"></div>
+                    <div id="smll"></div> -->
+                </div>
+            </div>
+        </div>
+        <script>
+            function add(){
+                var d = document.getElementsByClassName("component");
+                var u = window.prompt("enter web name");
+                const mai =document.createElement("div")
+                var ne = document.createElement("div")
+                mai.setAttribute("id","smll")
+                ne.setAttribute("class","cir")
+                mai.append(ne)
+                mai.append(u)
+                d[0].insertAdjacentElement("afterbegin",mai)
+                
+            }
+        </script>
+    </body>
+</html>
